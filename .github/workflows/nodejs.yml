@@ -21,4 +21,4 @@ jobs:
       working-directory: ./website
       run: |
         npm install
-        npm run build
+        GIT_USER=pollend CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
