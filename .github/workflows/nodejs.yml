@@ -19,6 +19,11 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: building static website
       working-directory: ./website
+      env:
+        DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+        GIT_SSH_COMMAND: "ssh -o StrictHostKeyChecking=no"
       run: |
-        npm install
-        GIT_USER=pollend CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
+         eval "$(ssh-agent -s)"
+         ssh-add - <<< "${DEPLOY_KEY}"
+         npm install
+         GIT_USER=pollend CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
