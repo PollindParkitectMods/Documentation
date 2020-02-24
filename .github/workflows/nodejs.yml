@@ -25,5 +25,7 @@ jobs:
       run: |
          eval "$(ssh-agent -s)"
          ssh-add - <<< "${DEPLOY_KEY}"
+         git config --global user.email "michaelpollind@michaelpollind"
+         git config --global user.name "Michael Pollind"
          npm install
          GIT_USER=pollend CURRENT_BRANCH=master USE_SSH=true npm run publish-gh-pages
