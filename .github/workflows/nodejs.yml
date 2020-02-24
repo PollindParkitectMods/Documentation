@@ -17,6 +17,8 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: cd website
-    - run: npm install
-    - run: npm run build
+    - name: building static website
+      working-directory: ./website
+      run: |
+        npm install
+        npm run build
