@@ -10,7 +10,6 @@ IMod Interface
 The IMod interface can be found in`(Game Directory)/Parkitect_Data/Managed/Assembly-CSharp.dll` and looks roughly like this:
 
 
-
 ``` cs
 /// <summary>
 ///     An interface for user made mods.
