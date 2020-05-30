@@ -1,0 +1,83 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Asset Bundles · Parkitect Mod Community</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="Some mods requires custom models, that&#x27;s no problem! You can use Asset Bundles to load custom models and other assets (everything except code). See the Unity tutorial on how to create/use Asset Bundles, [click](http://docs.unity3d.com/500/Documentation/Manual/BuildingAssetBundles5x.html)."/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Asset Bundles · Parkitect Mod Community"/><meta property="og:type" content="website"/><meta property="og:url" content="https://parkitect-mod-community.github.io/"/><meta property="og:description" content="Some mods requires custom models, that&#x27;s no problem! You can use Asset Bundles to load custom models and other assets (everything except code). See the Unity tutorial on how to create/use Asset Bundles, [click](http://docs.unity3d.com/500/Documentation/Manual/BuildingAssetBundles5x.html)."/><meta property="og:image" content="https://parkitect-mod-community.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://parkitect-mod-community.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://parkitect-mod-community.github.io/blog/atom.xml" title="Parkitect Mod Community Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://parkitect-mod-community.github.io/blog/feed.xml" title="Parkitect Mod Community Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Parkitect Mod Community"/><h2 class="headerTitleWithLogo">Parkitect Mod Community</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/starter" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Models And Assets</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Starter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/starter">Starter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Modding</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/imod-interface">IMod Interface</a></li><li class="navListItem"><a class="navItem" href="/docs/logging">Logging</a></li><li class="navListItem"><a class="navItem" href="/docs/debugging">Debugging</a></li><li class="navListItem"><a class="navItem" href="/docs/github">GitHub for beginners</a></li><li class="navListItem"><a class="navItem" href="/docs/parkitool">Parkitool</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models And Assets</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="/docs/asset-bundle">Models and Assets</a></li><li class="navListItem"><a class="navItem" href="/docs/asset-bundle-for-beginner">Asset Bundle For Beginners</a></li><li class="navListItem"><a class="navItem" href="/docs/recolorable-objects">Recolorable Objects</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Asset Bundles</h1></header><article><div><span><p>Some mods requires custom models, that's no problem! You can use Asset Bundles to load custom models and other assets (everything except code). See the Unity tutorial on how to create/use Asset Bundles, <a href="http://docs.unity3d.com/500/Documentation/Manual/BuildingAssetBundles5x.html">click</a>.</p>
+<p>When you've made your asset bundles you can include them in your mod. Create a subfolder in your mod 'Asset Bundles'. Now head over to your mod.json and configure it, set AssetBundleDir to 'Asset Bundles' and AssetBundlePrefix to a prefix of your liking. Now when you restart the game, the client will copy all your asset bundles to <code>(Parkitect folder)/Parkitect_Data/StreamingAssets/mods/(your asset bundle prefix)</code>. You can reach your asset bundles with the following piece on the following path:</p>
+<pre><code class="hljs">Application.streamingAssetsPath + '/mods/your-prefix/your-asset-bundle-file'
+</code></pre>
+<p>An example to load a custom model:</p>
+<pre><code class="hljs css language-c#">    <span class="hljs-keyword">using</span> UnityEngine;
+
+    <span class="hljs-keyword">namespace</span> <span class="hljs-title">PandaEntertainer</span>
+    {
+        <span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title">AssetBundleManager</span>
+        {
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> GameObject One;
+            <span class="hljs-keyword">public</span> <span class="hljs-keyword">readonly</span> GameObject Two;
+
+            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">AssetBundleManager</span>(<span class="hljs-params">Main main</span>)</span>
+            {
+                <span class="hljs-keyword">var</span> dsc = System.IO.Path.DirectorySeparatorChar;
+                <span class="hljs-keyword">var</span> assetBundle = AssetBundle.LoadFromFile(main.Path + dsc + <span class="hljs-string">"assetbundle"</span> + dsc + <span class="hljs-string">"assetpack"</span>);
+
+                One = assetBundle.LoadAsset&lt;GameObject&gt;(<span class="hljs-string">"1"</span>);
+                Two = assetBundle.LoadAsset&lt;GameObject&gt;(<span class="hljs-string">"2"</span>);
+                assetBundle.Unload(<span class="hljs-literal">false</span>);
+            }
+        }
+    }
+</code></pre>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/parkitool"><span class="arrow-prev">← </span><span>Parkitool</span></a><a class="docs-next button" href="/docs/asset-bundle-for-beginner"><span>Asset Bundle For Beginners</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Parkitect Mod Community" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

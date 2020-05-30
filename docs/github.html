@@ -1,0 +1,93 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Github · Parkitect Mod Community</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# For who is this guide?"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Github · Parkitect Mod Community"/><meta property="og:type" content="website"/><meta property="og:url" content="https://parkitect-mod-community.github.io/"/><meta property="og:description" content="# For who is this guide?"/><meta property="og:image" content="https://parkitect-mod-community.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://parkitect-mod-community.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://parkitect-mod-community.github.io/blog/atom.xml" title="Parkitect Mod Community Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://parkitect-mod-community.github.io/blog/feed.xml" title="Parkitect Mod Community Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Parkitect Mod Community"/><h2 class="headerTitleWithLogo">Parkitect Mod Community</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/starter" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Modding</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Starter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/starter">Starter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Modding</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/imod-interface">IMod Interface</a></li><li class="navListItem"><a class="navItem" href="/docs/logging">Logging</a></li><li class="navListItem"><a class="navItem" href="/docs/debugging">Debugging</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/github">GitHub for beginners</a></li><li class="navListItem"><a class="navItem" href="/docs/parkitool">Parkitool</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models And Assets</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/asset-bundle">Models and Assets</a></li><li class="navListItem"><a class="navItem" href="/docs/asset-bundle-for-beginner">Asset Bundle For Beginners</a></li><li class="navListItem"><a class="navItem" href="/docs/recolorable-objects">Recolorable Objects</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Github</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="for-who-is-this-guide"></a><a href="#for-who-is-this-guide" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>For who is this guide?</h1>
+<p>This guide is only for people that don't know how to work with git or GitHub yet. The git steps that are needed for publishing a mod on ParkitectNexus are commonly used. If you can work with git, you don't need this tutorial.</p>
+<h1><a class="anchor" aria-hidden="true" id="intro"></a><a href="#intro" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Intro</h1>
+<p>Most programmers know how to work with git and GitHub but most other workfields have no idea what it does or how to use it. Git is a so-called version control system (vcs), vcs means that you can revert your project to any point in history and have different versions of the same project on different computers (even on the same computer). A coworker can work on one version while you're working on your own version of the project, in the end you can simply merge 2 versions in 1.</p>
+<p>GitHub is a website that hosts git repositories, see a repository as 1 project, as long as that repository is open (open source) for everyone, hosting on GitHub is free. This makes it suitable to host the source of mods.</p>
+<p><strong>This method is only usable for small mod. If you want to create something medium-large, you should really try to <a href="https://try.github.io/levels/1/challenges/1">learn real git</a></strong></p>
+<h1><a class="anchor" aria-hidden="true" id="requirements"></a><a href="#requirements" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Requirements</h1>
+<ul>
+<li>A GitHub account, create one <a href="https://github.com/join">here</a></li>
+</ul>
+<h1><a class="anchor" aria-hidden="true" id="how-to"></a><a href="#how-to" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>How-to</h1>
+<h2><a class="anchor" aria-hidden="true" id="create-repository"></a><a href="#create-repository" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Create repository</h2>
+<p>We need to create a repository first, this repository has <strong>one</strong> mod that can be installed through ParkitectNexus.</p>
+<p><img src="http://i.imgur.com/e11zW5h.png" alt="create repo"></p>
+<p>Fill in the name of your repository (mod) and add an optional description. Make sure you select that the repo is public and &quot;Initialize this repository with a README&quot;, click on &quot;Create repository&quot;</p>
+<p><img src="http://i.imgur.com/4KqW4ns.png" alt="create repo"></p>
+<h2><a class="anchor" aria-hidden="true" id="uploading-files"></a><a href="#uploading-files" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Uploading files</h2>
+<p>After creating the repository, click &quot;Upload files&quot;.</p>
+<p><img src="http://i.imgur.com/JRjVw7O.png" alt="upload files"></p>
+<p>Select all files in your mod.</p>
+<p><img src="http://i.imgur.com/oXzsxwh.png" alt="select files"></p>
+<p>Drag them to GitHub and add a commit message. A commit message represents a short description of what you've changed since last version. Click &quot;Commit changes&quot;</p>
+<p><img src="http://i.imgur.com/NLTbfOV.png" alt="create commit"></p>
+<h2><a class="anchor" aria-hidden="true" id="creating-release"></a><a href="#creating-release" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Creating Release</h2>
+<p>Now your mod is on GitHub, you do need to create a so called &quot;release&quot; to be able to publish your mod on ParkitectNexus, the ParkitectNexus client will <strong>always</strong> download your last created release.</p>
+<p>Click the releases link.</p>
+<p><img src="http://i.imgur.com/go53Psh.png" alt="releases link"></p>
+<p>Fill in the version of your mod (2 times) and add a short description of what changed since your last release. After that, click &quot;Publish release&quot;.</p>
+<p><img src="http://i.imgur.com/04GxGOF.png" alt="publish release"></p>
+<p>You're mod is now released and ready to be published on ParkitectNexus. You'll see the following screen.</p>
+<p><img src="http://i.imgur.com/rAFtVTk.png" alt="release created"></p>
+<h2><a class="anchor" aria-hidden="true" id="publish-on-parkitectnexus"></a><a href="#publish-on-parkitectnexus" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Publish on ParkitectNexus</h2>
+<p>Copy the url of your repository, make sure you're not on the release page or something, just the url to the root of your repository.</p>
+<p><img src="http://i.imgur.com/OYax8tj.png" alt="repo url"></p>
+<p>Now copy that in the textfield on ParkitectNexus and follow the steps! If you want to publish an update of your mod, repeat the steps of uploading and creating a release. Remember, the client will always download the latest created release.</p>
+<p><img src="http://i.imgur.com/elb1jMv.png" alt="pn mod"></p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/debugging"><span class="arrow-prev">← </span><span>Debugging</span></a><a class="docs-next button" href="/docs/parkitool"><span>Parkitool</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#create-repository">Create repository</a></li><li><a href="#uploading-files">Uploading files</a></li><li><a href="#creating-release">Creating Release</a></li><li><a href="#publish-on-parkitectnexus">Publish on ParkitectNexus</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Parkitect Mod Community" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

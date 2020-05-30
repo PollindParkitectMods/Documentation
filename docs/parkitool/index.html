@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><title>Parkitool · Parkitect Mod Community</title><meta name="viewport" content="width=device-width"/><meta name="generator" content="Docusaurus"/><meta name="description" content="# Parkitool"/><meta name="docsearch:language" content="en"/><meta property="og:title" content="Parkitool · Parkitect Mod Community"/><meta property="og:type" content="website"/><meta property="og:url" content="https://parkitect-mod-community.github.io/"/><meta property="og:description" content="# Parkitool"/><meta property="og:image" content="https://parkitect-mod-community.github.io/img/undraw_online.svg"/><meta name="twitter:card" content="summary"/><meta name="twitter:image" content="https://parkitect-mod-community.github.io/img/undraw_tweetstorm.svg"/><link rel="shortcut icon" href="/img/favicon.ico"/><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"/><link rel="alternate" type="application/atom+xml" href="https://parkitect-mod-community.github.io/blog/atom.xml" title="Parkitect Mod Community Blog ATOM Feed"/><link rel="alternate" type="application/rss+xml" href="https://parkitect-mod-community.github.io/blog/feed.xml" title="Parkitect Mod Community Blog RSS Feed"/><script type="text/javascript" src="https://buttons.github.io/buttons.js"></script><script src="/js/scrollSpy.js"></script><link rel="stylesheet" href="/css/main.css"/><script src="/js/codetabs.js"></script></head><body class="sideNavVisible separateOnPageNav"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="/"><img class="logo" src="/img/favicon.ico" alt="Parkitect Mod Community"/><h2 class="headerTitleWithLogo">Parkitect Mod Community</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class="siteNavGroupActive"><a href="/docs/starter" target="_self">Documentation</a></li><li class=""><a href="/blog/" target="_self">Blog</a></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Modding</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Starter</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/starter">Starter</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Modding</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/imod-interface">IMod Interface</a></li><li class="navListItem"><a class="navItem" href="/docs/logging">Logging</a></li><li class="navListItem"><a class="navItem" href="/docs/debugging">Debugging</a></li><li class="navListItem"><a class="navItem" href="/docs/github">GitHub for beginners</a></li><li class="navListItem navListItemActive"><a class="navItem" href="/docs/parkitool">Parkitool</a></li></ul></div><div class="navGroup"><h3 class="navGroupCategoryTitle">Models And Assets</h3><ul class=""><li class="navListItem"><a class="navItem" href="/docs/asset-bundle">Models and Assets</a></li><li class="navListItem"><a class="navItem" href="/docs/asset-bundle-for-beginner">Asset Bundle For Beginners</a></li><li class="navListItem"><a class="navItem" href="/docs/recolorable-objects">Recolorable Objects</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer docsContainer"><div class="wrapper"><div class="post"><header class="postHeader"><h1 id="__docusaurus" class="postHeaderTitle">Parkitool</h1></header><article><div><span><h1><a class="anchor" aria-hidden="true" id="parkitool"></a><a href="#parkitool" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Parkitool</h1>
+<p>A set of tools that help with modding Parkitect. Setting up <code>.csproj</code> downloading parkitect assemblies and configuring output path to the mods directory.</p>
+<h1><a class="anchor" aria-hidden="true" id="install"></a><a href="#install" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Install</h1>
+<p>This is installed as a dotnet tool and it should be avalible from teh path once installed from nuget.</p>
+<p><a href="https://www.nuget.org/packages/parkitool/">https://www.nuget.org/packages/parkitool/</a></p>
+<pre><code class="hljs">dotnet<span class="hljs-built_in"> tool </span>install --global parkitool
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="configuration"></a><a href="#configuration" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Configuration</h2>
+<h3><a class="anchor" aria-hidden="true" id="parkitectjson"></a><a href="#parkitectjson" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>parkitect.json</h3>
+<pre><code class="hljs">{
+  <span class="hljs-attr">"name"</span>: <span class="hljs-string">"&lt;mod_name&gt;"</span>,
+  <span class="hljs-attr">"folder"</span>: <span class="hljs-string">"&lt;mod_folder&gt;"</span>,
+  <span class="hljs-attr">"version"</span>: <span class="hljs-string">"v1.0.0"</span>,
+  <span class="hljs-attr">"workshop"</span>: <span class="hljs-string">"&lt;workshop_id&gt;"</span>,
+  <span class="hljs-attr">"author"</span>: <span class="hljs-string">"&lt;author&gt;"</span>,
+  <span class="hljs-attr">"description"</span>: <span class="hljs-literal">null</span>,
+  <span class="hljs-attr">"preview"</span>: <span class="hljs-string">"&lt;preview_image&gt;"</span>,
+  <span class="hljs-attr">"assemblies"</span>: [
+    <span class="hljs-string">"System"</span>,
+    <span class="hljs-string">"System.Core"</span>,
+    <span class="hljs-string">"System.Data"</span>,
+    <span class="hljs-string">"UnityEngine"</span>,
+    <span class="hljs-string">"UnityEngine.AssetBundleModule"</span>,
+    <span class="hljs-string">"UnityEngine.CoreModule"</span>,
+    <span class="hljs-string">"Parkitect"</span>,
+    <span class="hljs-string">"UnityEngine.PhysicsModule"</span>
+    ...
+    &lt;assemblies&gt;
+  ],
+  <span class="hljs-attr">"assets"</span>: [
+    <span class="hljs-string">"assetbundle/**"</span>,
+    ...
+    &lt;assets&gt;
+  ]
+}
+</code></pre>
+<h2><a class="anchor" aria-hidden="true" id="commands"></a><a href="#commands" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Commands</h2>
+<h3><a class="anchor" aria-hidden="true" id="parkitool-install--u-steam_username--p-steam_password"></a><a href="#parkitool-install--u-steam_username--p-steam_password" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>parkitool install -u &lt;steam_username&gt; -p &lt;steam_password&gt;</code></h3>
+<p>Downloads parkitect into a hidden folder and setups up hint paths to point to parkitect assemblies. output path is determine first by folder then by project name.</p>
+<pre><code class="hljs">Connecting <span class="hljs-keyword">to</span> Steam3<span class="hljs-built_in">..</span>. Done!<span class="hljs-built_in">
+Logging </span><span class="hljs-string">'&lt;steam_username&gt;'</span> into Steam3<span class="hljs-built_in">..</span>.Disconnected <span class="hljs-keyword">from</span> Steam
+Please enter your 2 factor auth code <span class="hljs-keyword">from</span> your authenticator app: tj7ry
+Retrying Steam3 connection<span class="hljs-built_in">..</span>. Done!<span class="hljs-built_in">
+Logging </span><span class="hljs-string">'&lt;steam_username&gt;'</span> into Steam3<span class="hljs-built_in">..</span>. Done!
+Download Parkitect <span class="hljs-built_in">..</span>.
+Got 179 licenses <span class="hljs-keyword">for</span> account!
+Got session token!
+Got AppInfo <span class="hljs-keyword">for</span> 453090
+Using app branch: <span class="hljs-string">'public'</span>.
+Got depot key <span class="hljs-keyword">for</span> 453094 result: OK
+Downloading depot 453094 - Parkitect Linux
+Got CDN auth token <span class="hljs-keyword">for</span> steamcontent.com result: OK (expires 5/31/2020 1:21:58 AM)
+ 00.02% .Parkitect/Game/Parkitect_Data/Managed/UnityEngine.SpriteShapeModule.dll
+ 00.24% .Parkitect/Game/Parkitect_Data/Managed/UnityEngine.AnimationModule.dll
+ 01.19% .Parkitect/Game/Parkitect_Data/Managed/Mono.Security.dll
+ 01.29% .Parkitect/Game/Parkitect_Data/Managed/UnityEngine.UnityWebRequestModule.dll
+ 01.36% .Parkitect/Game/Parkitect_Data/Managed/UnityEngine.VRModule.dll
+ 01.39% .Parkitect/Game/Parkitect_Data/Managed/Accessibility.dll
+ 01.68% .Parkitect/Game/Parkitect_Data/Managed/System.DirectoryServices.dll
+ <span class="hljs-built_in">..</span>.
+ Depot 453094 - Downloaded 9112464 bytes (33220608 bytes uncompressed)
+Setup Project <span class="hljs-built_in">..</span>.
+Resolved Known Standard<span class="hljs-built_in"> System </span>Assembly --<span class="hljs-built_in"> System
+</span>Resolved Known Standard<span class="hljs-built_in"> System </span>Assembly -- System.Core
+Resolved Known Standard<span class="hljs-built_in"> System </span>Assembly -- System.Data
+Resolved <span class="hljs-keyword">to</span> Known<span class="hljs-built_in"> System </span>assembly but found <span class="hljs-keyword">in</span> Parkitect Managed -- UnityEngine
+Resolved <span class="hljs-keyword">to</span> Known<span class="hljs-built_in"> System </span>assembly but found <span class="hljs-keyword">in</span> Parkitect Managed -- UnityEngine.AssetBundleModule
+Resolved <span class="hljs-keyword">to</span> Known<span class="hljs-built_in"> System </span>assembly but found <span class="hljs-keyword">in</span> Parkitect Managed -- UnityEngine.CoreModule
+Resolved <span class="hljs-keyword">to</span> Known<span class="hljs-built_in"> System </span>assembly but found <span class="hljs-keyword">in</span> Parkitect Managed -- Parkitect
+Resolved <span class="hljs-keyword">to</span> Known<span class="hljs-built_in"> System </span>assembly but found <span class="hljs-keyword">in</span> Parkitect Managed -- UnityEngine.PhysicsModule
+Output Path: &lt;mod_path&gt;/&lt;mod_folder&gt;
+Created Project: ./&lt;project_name&gt;.csproj
+Completed
+</code></pre>
+<h3><a class="anchor" aria-hidden="true" id="parkitool-install--path-project_path"></a><a href="#parkitool-install--path-project_path" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>parkitool install -path &lt;project_path&gt;</code></h3>
+<p>Similar configuration but assemblies are resolved to a given path to parkitect.</p>
+<h3><a class="anchor" aria-hidden="true" id="parkitool-init"></a><a href="#parkitool-init" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a><code>parkitool init</code></h3>
+<p>setups local configuration for the tool to use through a step  by step process.</p>
+</span></div></article></div><div class="docs-prevnext"><a class="docs-prev button" href="/docs/github"><span class="arrow-prev">← </span><span class="function-name-prevnext">GitHub for beginners</span></a><a class="docs-next button" href="/docs/asset-bundle"><span>Models and Assets</span><span class="arrow-next"> →</span></a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#configuration">Configuration</a><ul class="toc-headings"><li><a href="#parkitectjson">parkitect.json</a></li></ul></li><li><a href="#commands">Commands</a><ul class="toc-headings"><li><a href="#parkitool-install--u-steam_username--p-steam_password"><code>parkitool install -u &lt;steam_username&gt; -p &lt;steam_password&gt;</code></a></li><li><a href="#parkitool-install--path-project_path"><code>parkitool install -path &lt;project_path&gt;</code></a></li><li><a href="#parkitool-init"><code>parkitool init</code></a></li></ul></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="/" class="nav-home"><img src="/img/favicon.ico" alt="Parkitect Mod Community" width="66" height="58"/></a><div><h5>Docs</h5><a href="/docs/en/doc1.html">Getting Started (or other categories)</a><a href="/docs/en/doc2.html">Guides (or other categories)</a><a href="/docs/en/doc3.html">API Reference (or other categories)</a></div><div><h5>Community</h5><a href="/en/users.html">User Showcase</a><a href="https://stackoverflow.com/questions/tagged/" target="_blank" rel="noreferrer noopener">Stack Overflow</a><a href="https://discordapp.com/">Project Chat</a><a href="https://twitter.com/" target="_blank" rel="noreferrer noopener">Twitter</a></div><div><h5>More</h5><a href="/blog">Blog</a><a href="https://github.com/">GitHub</a><a class="github-button" data-icon="octicon-star" data-count-href="/facebook/docusaurus/stargazers" data-show-count="true" data-count-aria-label="# stargazers on GitHub" aria-label="Star this project on GitHub">Star</a></div></section><a href="https://opensource.facebook.com/" target="_blank" rel="noreferrer noopener" class="fbOpenSource"><img src="/img/oss_logo.png" alt="Facebook Open Source" width="170" height="45"/></a><section class="copyright">Copyright © 2020 Your Name or Your Company Name</section></footer></div></body></html>

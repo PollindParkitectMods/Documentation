@@ -1,7 +1,0 @@
-{
-  "docs": {
-    "Starter": ["starter"],
-    "Modding": ["imod-interface","logging", "debugging", "github","parkitool"],
-    "Models And Assets": ["asset-bundle","asset-bundle-for-beginner", "recolorable-objects"]
-  }
-}
